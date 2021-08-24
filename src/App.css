@@ -1,14 +1,93 @@
 .App {
-    padding: 20px;
+  background-color: teal;
+}
+
+.contentForm {
+    background-color: white;
+    width: 50%;
+    margin: 10% auto;
+    border-radius: 0.5em;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.contentForm h1 {
+    text-align: center;
+    color: #444;
+    font-weight: bold;
+    letter-spacing: .2em;
 }
 
 .labelLastname {
     display: block;
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-weight: bold;
     letter-spacing: .5px;
+    color: teal;
+    margin: 10px;
+    text-align: center;
+}
+
+.lasnameInput {
+    display: block;
+    width: 80%;
+    padding: 1em;
+    font-size: 1em;
+    margin: 0 auto;
+    color: rgb(107, 106, 106);
+    border: 1.2px solid teal;
+}
+
+.lasnameInput:focus {
+    color:black;
+    border: 1.2px solid teal;
 }
 
 .btnSend {
-    margin-left: 10px;
+    display: block;
+    width: 95%;
+    padding: 1em;
+    font-weight: bold;
+    font-size: 1em;
+    background-color: teal;
+    color: white;
+    letter-spacing: .1em;
+    border: 1px solid;
+    border-radius: .2em;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: 1em auto;
+}
+
+.btnSend:hover {
+    background-color: white;
+    color: teal;
+    border: 1px solid teal;
+    cursor: pointer;
+}
+
+.divResult {
+    background-color: teal;
+    width: 50%;
+    margin: 1em auto;
+    padding: 1em;
+    color: white;
+    font-size: 1.2em;
+}
+
+.footer {
+    background-color: teal;
+    color: white;
+    padding: 0 1em;
+}
+
+.footer p {
+    display:  inline-block;
+    color: white;
+   }
+
+.footer a {
+    margin-left: .5em;
+ display:  inline-block;
+ text-decoration: none;
+ font-weight: bold;
+ color: white;
 }

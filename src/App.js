@@ -18,23 +18,31 @@ function App() {
     <div className="App">
 
 
-      <div>
-        <h1>Mira tu horario se la selección</h1>
+      <div className="contentForm">
+        <h1> Horario de Selección</h1>
 
-        <label 
+        <label
           htmlFor="lastName"
           className="labelLastname">1er. Apellido:</label>
 
-        <input id="lastName" placeholder="Tu apellido"
-          onChange={e => setLastname(e.target.value)} />
-        
-        <button className="btnSend"
-         onClick={onCLickConsult}>Consultar</button>
-      </div>
+        <input
+          id="lastName"
+          placeholder="Tu apellido"
+          onChange={e => setLastname(e.target.value)}
+          className="lasnameInput" />
 
-      <div>
-        <p>Tu selección es el dia: { day }</p>
-        <p>A la hora: { hour }</p>
+        <button className="btnSend"
+          onClick={onCLickConsult}>Consultar Horario</button>
+
+        <div className="divResult">
+          <p>Tu selección es el dia: <b>{day}</b></p>
+          <p>A la hora: <b>{hour}</b></p>
+        </div>
+
+        <div className="footer">
+          <p>By Elvis Inoa :)</p>
+          <a href="https://github.com/soyjosue">Github</a>
+        </div>
       </div>
     </div>
   );
