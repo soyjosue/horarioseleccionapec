@@ -73,6 +73,23 @@
     font-size: 1.2em;
 }
 
+.radioContent {
+    display: flex;
+    width: 85%;
+    margin: 1em auto;
+    justify-content: space-between;
+}
+
+.errorDiv {
+    background-color: tomato;
+    width: 50%;
+    margin: 1em auto;
+    padding: 1em;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
 .footer {
     background-color: teal;
     color: white;

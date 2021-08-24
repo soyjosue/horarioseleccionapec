@@ -76,6 +76,26 @@ export const getHour = lastname => {
     return "Hubo un error"
 }
 
+export const getPosgradoDay = () => {
+    return "Sabado 28"
+}
+
+export const getPosgradoHour = (lastname) => {
+    let str = getForNumber(lastname.toUpperCase());
+
+    if(str >= '1' && str <= '4512') {
+        return "12:20 P.M."
+    } else if(str => '4513' && str <= '13127') {
+        return "12:40 P.M."
+    } else if(str => '135' && str <= '19163') {
+        return "1:00 P.M."
+    } else if(str => '19164' && str <= '272212') {
+        return "1:20 P.M."
+    }
+
+    return "Hubo un error"
+}
+
 const getForNumber = lastname => {
     var name = [lastname.substr(0, 1), lastname.substr(1, 1), lastname.substr(2, 1)];
 
