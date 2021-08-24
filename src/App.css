@@ -91,3 +91,15 @@
  font-weight: bold;
  color: white;
 }
+
+@media screen and (max-width: 1080px) {
+    .contentForm {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 442px) {
+    .contentForm {
+        width: 100%;
+    }
+}
