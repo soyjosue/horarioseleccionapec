@@ -1,8 +1,21 @@
 import './App.css';
 import { useState } from 'react';
 import { getDay, getHour, getPosgradoDay, getPosgradoHour } from './helper/Utils';
+import firebase from 'firebase';
 
 function App() {
+  // Initialize Firebase
+  firebase.initializeApp({
+    apiKey: "AIzaSyBwODzo-rRT_79WkgARr7Rwh6WMsVN-iIE",
+  authDomain: "unapecproyect.firebaseapp.com",
+  projectId: "unapecproyect",
+  storageBucket: "unapecproyect.appspot.com",
+  messagingSenderId: "1072879441533",
+  appId: "1:1072879441533:web:3bf726f46e2cfb3ae04314",
+  measurementId: "G-RBSJ8DBL83"
+  });
+  firebase.analytics();
+  const db = firebase.firestore();
 
   const [lastname, setLastname] = useState("");
   const [studentType, setStudentType] = useState("g");
@@ -30,13 +43,20 @@ function App() {
       setHour(getPosgradoHour(lastname));
     }
 
-    if(studentType === "t") {
+    if (studentType === "t") {
       setStudent("Técnico")
-    } else if(studentType === "g") {
+    } else if (studentType === "g") {
       setStudent("Grado")
     } else {
       setStudent("Posgrado")
     }
+
+    db.collection('lastname').add({
+      lastname: lastname,
+      studentType: student,
+      day: day,
+      hour: hour
+    })
 
     setShow(true);
   }
