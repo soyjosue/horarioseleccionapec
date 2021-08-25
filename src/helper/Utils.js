@@ -13,7 +13,70 @@ export const getDay = lastname => {
     return "hubo un error"
 }
 
-export const getHour = lastname => {
+export const getHour = (lastname) => {
+    let str = lastname.toUpperCase().substr(0, 3);
+
+    if (str >= 'A' && str <= 'ALB'
+        || str >= 'GRU' && str <= 'HEN'
+        || str >= 'O' && str <= 'PAS') {
+        return "8:20 A.M."
+    } else if (str >= 'ALC' && str <= 'AQU'
+        || str >= 'HEO' && str <= 'ITU'
+        || str >= 'PAT' && str <= 'PEP') {
+        return "8:40 A.M."
+    } else if (str >= 'ARA' && str <= 'BAS'
+        || str >= 'JA' && str <= 'KWI'
+        || str >= 'PEQ' && str <= 'PES') {
+        return "9:00 A.M."
+    } else if (str >= 'BAT' && str <= 'BOR'
+        || str >= 'LA' && str <= 'LOP'
+        || str >= 'PET' && str <= 'PUZ') {
+        return "9:20 A.M."
+    } else if (str >= 'BOV' && str <= 'CAN'
+        || str >= 'LOQ' && str <= 'MAÑ'
+        || str >= 'QUE' && str <= 'RES') {
+        return "9:40 A.M."
+    } else if (str >= 'CAÑ' && str <= 'CEB'
+        || str >= 'MAO' && str <= 'MAR'
+        || str >= 'RET' && str <= 'RIZ') {
+        return "10:00 A.M."
+    } else if (str >= 'CEC' && str <= 'CRE'
+        || str >= 'MAS' && str <= 'MEJ'
+        || str >= 'ROA' && str <= 'ROD') {
+        return "10:20 A.M."
+    } else if (str >= 'CRI' && str <= 'DE J'
+        || str >= 'MEK' && str <= 'MIR'
+        || str >= 'ROE' && str <= 'SAM') {
+        return "10:40 A.M."
+    } else if (str >= 'DE L' && str <= 'DE O'
+        || str >= 'MIS' && str <= 'MOR'
+        || str >= 'SAN' && str <= 'SAÑ') {
+        return "11:00 A.M."
+    } else if (str >= 'DE P' && str <= 'DIZ'
+        || str >= 'MOS' && str <= 'MUÑ'
+        || str >= 'SAO' && str <= 'SOT') {
+        return "11:20 A.M."
+    } else if (str >= 'DO' && str <= 'ESP'
+        || str >= 'SOU' && str <= 'TEL') {
+        return "11:40 A.M."
+    } else if (str >= 'ESQ' && str <= 'FEL'
+        || str >= 'TEM' && str <= 'UVU') {
+        return "12:00 P.M."
+    } else if (str >= 'FEM' && str <= 'FRI'
+        || str >= 'VA' && str <= 'VAR') {
+        return "12:20 P.M."
+    } else if (str >= 'FRO' && str <= 'GES'
+        || str >= 'VAS' && str <= 'VOZ') {
+        return "12:40 P.M."
+    } else if (str >= 'GIA' && str <= 'GRO'
+        || str >= 'WE' && str <= 'ZUL') {
+        return "1:00 P.M."
+    } else {
+        return getHour2(lastname);
+    }
+};
+
+export const getHour2 = lastname => {
     let str = getForNumber(lastname.toUpperCase());
 
     if (str >= '1' && str <= '1122'
