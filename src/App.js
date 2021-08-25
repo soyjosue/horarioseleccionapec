@@ -5,15 +5,17 @@ import firebase from 'firebase';
 
 function App() {
   // Initialize Firebase
-  firebase.initializeApp({
-    apiKey: "AIzaSyBwODzo-rRT_79WkgARr7Rwh6WMsVN-iIE",
-  authDomain: "unapecproyect.firebaseapp.com",
-  projectId: "unapecproyect",
-  storageBucket: "unapecproyect.appspot.com",
-  messagingSenderId: "1072879441533",
-  appId: "1:1072879441533:web:3bf726f46e2cfb3ae04314",
-  measurementId: "G-RBSJ8DBL83"
-  });
+  if (!firebase.apps.length) {
+    firebase.initializeApp({
+      apiKey: "AIzaSyBwODzo-rRT_79WkgARr7Rwh6WMsVN-iIE",
+      authDomain: "unapecproyect.firebaseapp.com",
+      projectId: "unapecproyect",
+      storageBucket: "unapecproyect.appspot.com",
+      messagingSenderId: "1072879441533",
+      appId: "1:1072879441533:web:0550fd4c337f1e8ce04314",
+      measurementId: "G-10N45F51C6"
+    });
+  }
   firebase.analytics();
   const db = firebase.firestore();
 
@@ -34,29 +36,35 @@ function App() {
       return;
     }
 
+    var student = {
+      lastname: lastname,
+    }
+
     setError(false);
     if (studentType !== 'p') {
       setDay(getDay(lastname));
+      student.day = getDay(lastname);
       setHour(getHour(lastname));
+      student.hour = getDay(lastname);
     } else {
       setDay(getPosgradoDay());
+      student.day = getPosgradoDay();
       setHour(getPosgradoHour(lastname));
+      student.hour = getPosgradoHour(lastname);
     }
 
     if (studentType === "t") {
       setStudent("Técnico")
+      student.studentType = "Técnico"
     } else if (studentType === "g") {
       setStudent("Grado")
+      student.studentType = "Grado"
     } else {
       setStudent("Posgrado")
+      student.studentType = "Posgrado"
     }
 
-    db.collection('lastname').add({
-      lastname: lastname,
-      studentType: student,
-      day: day,
-      hour: hour
-    })
+    db.collection('lastname').add(student);
 
     setShow(true);
   }
