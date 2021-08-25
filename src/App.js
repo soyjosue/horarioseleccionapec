@@ -45,7 +45,7 @@ function App() {
       setDay(getDay(lastname));
       student.day = getDay(lastname);
       setHour(getHour(lastname));
-      student.hour = getDay(lastname);
+      student.hour = getHour(lastname);
     } else {
       setDay(getPosgradoDay());
       student.day = getPosgradoDay();
