@@ -123,7 +123,7 @@ const LateSelection = () => {
             default:
                 setErrorCarrer(true);
                 setShow(false);
-                break;
+                return;
         }
 
         if(!errorCarrer) {
