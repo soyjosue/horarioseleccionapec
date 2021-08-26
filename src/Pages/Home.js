@@ -54,7 +54,7 @@ const Home = () => {
             student.studentType = "Posgrado"
         }
 
-        student.date = new Date().now();
+        student.date = Date().now();
         db.collection('lastname').add(student);
 
         setShow(true);

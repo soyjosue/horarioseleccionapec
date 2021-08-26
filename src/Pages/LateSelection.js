@@ -126,7 +126,7 @@ const LateSelection = () => {
         }
 
         if(!errorCarrer) {
-            student.date = new Date.now();
+            student.date = Date.now();
             db.collection('late').add(student);
         }
     }
