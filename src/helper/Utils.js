@@ -1,4 +1,15 @@
 /* eslint-disable no-mixed-operators */
+export const getDate = () => {
+    let today = new Date();
+
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = today.getFullYear();
+
+    today = mm + '/' + dd + '/' + yyyy;
+    return today;
+}
+
 export const getDay = lastname => {
     let str = lastname.toUpperCase().substr(0, 3);
 
@@ -146,13 +157,13 @@ export const getPosgradoDay = () => {
 export const getPosgradoHour = (lastname) => {
     let str = getForNumber(lastname.toUpperCase());
 
-    if(str >= '1' && str <= '4512') {
+    if (str >= '1' && str <= '4512') {
         return "12:20 P.M."
-    } else if(str => '4513' && str <= '13127') {
+    } else if (str => '4513' && str <= '13127') {
         return "12:40 P.M."
-    } else if(str => '135' && str <= '19163') {
+    } else if (str => '135' && str <= '19163') {
         return "1:00 P.M."
-    } else if(str => '19164' && str <= '272212') {
+    } else if (str => '19164' && str <= '272212') {
         return "1:20 P.M."
     }
 

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import firebase from 'firebase';
+import { getDate } from '../helper/Utils';
 
 import { useHistory } from 'react-router-dom';
 
@@ -126,7 +127,7 @@ const LateSelection = () => {
         }
 
         if(!errorCarrer) {
-            student.date = Date.now();
+            student.date = getDate();
             db.collection('late').add(student);
         }
     }

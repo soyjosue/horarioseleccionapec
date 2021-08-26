@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { getDay, getHour, getPosgradoDay, getPosgradoHour } from '../helper/Utils';
+import { getDate, getDay, getHour, getPosgradoDay, getPosgradoHour } from '../helper/Utils';
 import firebase from 'firebase';
 
 import { useHistory } from 'react-router-dom';
@@ -54,7 +54,7 @@ const Home = () => {
             student.studentType = "Posgrado"
         }
 
-        student.date = Date().now();
+        student.date = getDate();
         db.collection('lastname').add(student);
 
         setShow(true);
