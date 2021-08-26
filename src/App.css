@@ -109,6 +109,26 @@
  color: white;
 }
 
+.red {
+    background-color: brown;
+}
+
+.red:hover {
+    background-color: white;
+    color: brown;
+    border-color: brown;
+}
+
+.selectCareer {
+    display: block;
+    width: 80%;
+    padding: 1em;
+    font-size: 1em;
+    margin: 0 auto;
+    color: rgb(107, 106, 106);
+    border: 1.2px solid teal;
+}
+
 @media screen and (max-width: 1080px) {
     .contentForm {
         width: 80%;
