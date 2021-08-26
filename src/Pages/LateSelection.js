@@ -43,62 +43,80 @@ const LateSelection = () => {
             return;
         }
 
+        const student = {carrer, lastname};
+
         setShow(true);
         switch (carrer) {
             case 'posgrado':
                 setHour('1:20 PM');
+                student.hour = '1:20 PM'
                 break;
             case 'derecho':
             case 'finanzas':
             case 'financiero':
                 setHour('8:20 AM');
+                student.hour = '8:20 AM'
                 break;
             case 'contabilidad':
             case 'sistemasinformacion':
             case 'interiores':
                 setHour('8:40 AM');
+                student.hour = '8:40 AM'
                 break;
             case 'grafico':
             case 'cine':
             case 'ingles':
                 setHour('9:00 AM');
+                student.hour = '9:00 AM'
                 break;
             case 'mercadotecnica':
                 setHour('9:20 AM');
+                student.hour = '9:20 AM'
                 break;
             case 'industrial':
                 setHour('9:40 AM');
+                student.hour = '9:40 AM'
                 break;
             case 'eletrica':
             case 'electronica':
             case 'comunicacion':
                 setHour('10:00 AM');
+                student.hour = '10:00 AM'
                 break;
             case 'administracion':
                 setHour('10:20 AM');
+                student.hour = '10:20 AM'
                 break;
             case 'sistema':
                 setHour('10:40 AM');
+                student.hour = '10:40 AM'
                 break;
             case 'software':
                 setHour('11:00 AM');
+                student.hour = '11:00 AM'
                 break;
             case 'publicidad':
                 setHour('11:20 AM');
+                student.hour = '11:20 AM'
                 break;
             case 'turismo':
                 setHour('11:40 AM');
+                student.hour = '11:40 AM'
                 break;
             case 'negocios':
                 let las = lastname.toUpperCase().substr(0, 2);
                 if (las >= 'A' && las <= 'DUZ') {
                     setHour('12:00 PM')
+                    student.hour = '12:00 PM'
                 } else if (las >= 'E' && las <= 'MEJ') {
                     setHour('12:20 PM')
+                    student.hour = '12:20 PM'
                 } else if (las >= 'MEL' && las <= 'RUZ') {
                     setHour('12:40 PM')
+                    student.hour = '12:40 PM'
                 } else if (las >= 'S' && las <= 'ZUL') {
                     setHour('1:00 PM')
+                    student.hour = '1:00 PM'
                 }
                 break;
             default:
@@ -108,11 +126,8 @@ const LateSelection = () => {
         }
 
         if(!errorCarrer) {
-            db.collection('late').add({
-                lastname,
-                carrer,
-                hour
-            });
+            student.date = new Date.now();
+            db.collection('late').add(student);
         }
     }
 
